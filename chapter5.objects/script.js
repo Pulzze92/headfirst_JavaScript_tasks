@@ -9,7 +9,11 @@ let fiat = {
 	started: false,
 	fuel: 0,
 	start: function () {
+		if (this.fuel > 0){
 		this.started = true;
+		} else {
+			alert('The car is on empty, fill up before starting!');
+		}
 	},
 	stop: function () {
 		this.started = false;
@@ -32,6 +36,8 @@ let fiat = {
 	}
 };
 
+fiat.start();
+fiat.addFuel(3);
 fiat.start();
 fiat.drive();
 fiat.addFuel(2);
